@@ -29,11 +29,15 @@ import {
 export const getMovies = async (dispatch) => {
   dispatch(getMoviesStart());
   try {
-    const res = await axios.get("http://localhost:8000/api/movies/", {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-      },
-    });
+    const res = await axios.get(
+      "https://server-sf9z.onrender.com/api/movies/",
+      {
+        headers: {
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        },
+      }
+    );
     dispatch(getMoviesSuccess(res.data));
   } catch (err) {
     dispatch(getMoviesFailure());

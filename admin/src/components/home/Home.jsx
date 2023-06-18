@@ -29,12 +29,15 @@ const Home = () => {
   );
   const getStats = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/users/stats", {
-        headers: {
-          token:
-            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-        },
-      });
+      const res = await axios.get(
+        "https://server-sf9z.onrender.com/api/users/stats",
+        {
+          headers: {
+            token:
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+          },
+        }
+      );
       const statsList = res.data.sort(function (a, b) {
         return a._id - b._id;
       });

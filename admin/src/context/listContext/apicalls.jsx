@@ -17,7 +17,7 @@ import {
 export const getLists = async (dispatch) => {
   dispatch(getListsStart());
   try {
-    const res = await axios.get("http://localhost:8000/api/lists/", {
+    const res = await axios.get("https://server-sf9z.onrender.com/api/lists/", {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },

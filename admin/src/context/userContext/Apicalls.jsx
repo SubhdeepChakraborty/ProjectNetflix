@@ -18,7 +18,7 @@ import {
 export const getUsers = async (dispatch) => {
   dispatch(getUsersStart());
   try {
-    const res = await axios.get("http://localhost:8000/api/users/", {
+    const res = await axios.get("https://server-sf9z.onrender.com/api/users/", {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },

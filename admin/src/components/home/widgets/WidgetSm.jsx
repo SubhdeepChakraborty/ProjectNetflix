@@ -10,7 +10,7 @@ const WidgetSm = () => {
     const getNewUsers = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8000/api/users?new=true",
+          "https://server-sf9z.onrender.com/api/users?new=true",
           {
             headers: {
               token:
