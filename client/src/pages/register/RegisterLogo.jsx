@@ -13,7 +13,7 @@ const RegisterLogo = () => {
   }, 4000);
 
   return (
-    <div>
+    <div className="logoMobile">
       <Lottie animationData={animationData} lottieRef={animationRef} />
     </div>
   );

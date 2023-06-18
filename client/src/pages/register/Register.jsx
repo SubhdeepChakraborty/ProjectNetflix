@@ -5,6 +5,7 @@ import RegisterLogo from "./RegisterLogo";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -39,32 +40,62 @@ const Register = () => {
       <div className="-top-20 absolute">
         <RegisterLogo />
       </div>
-      <div className="text-white ml-2 mb-12 flex flex-col items-center justify-center ">
-        <h1 className="font-[Merriweather] font-semibold text-2xl">
+      <div
+        className="text-white ml-2 mb-12 
+      md:absolute md:top-[260px] textDiv padTextDiv flex flex-col items-center justify-center"
+      >
+        <h1 className="font-[Merriweather] font-semibold text-2xl mainText">
           Unlimited movies, TV shows, and more.
         </h1>
-        <h2 className="font-[Sen] text-sm text-gray-400">
+        <h2 className="font-[Sen] text-sm text-gray-400 smallText">
           Watch anywhere. Cancel anytime.
         </h2>
-        <p className="font-[Sen] text-sm text-gray-400">
+        <p className="font-[Sen] text-sm text-gray-400 smallText">
           Ready to watch? Enter your email to create or restart your membership.
         </p>
       </div>
       {!email ? (
         <>
-          <div className="absolute right-[27.8rem] top-[22rem]">
+          {/* <div
+            className="absolute right-[27.8rem] w-[70%] top-[22rem] 
+          md:left-[13rem] lg:left-[13rem] md:top-[24rem]"
+          >
             <input
               placeholder="Email"
-              className="w-[350px] p-2 px-2 rounded font-[Sen] font-medium outline-none border-b-2 border-b-gray-600"
+              className="w-[350px] p-2 px-2 rounded font-[Sen] font-medium 
+              outline-none border-b-2 border-b-gray-600"
               ref={Emailref}
             />
             <button
-              className="font-[Merriweather] text-white font-normal p-2 bg-red-700 px-4 ml-2 rounded text-sm
+              className="font-[Merriweather] text-white font-normal p-2 bg-red-700 
+              px-4 ml-2 rounded text-sm
         border border-red-700"
               onClick={handleStart}
             >
               Get Started
             </button>
+          </div> */}
+          <div className="absolute mt-[6rem] buttonDiv md:absolute md:top-[16rem]">
+            <div className="flex ">
+              <div>
+                <input
+                  placeholder="Email"
+                  className="w-[350px] inputText p-2 px-2 rounded font-[Sen] text-lg
+                  font-medium outline-none border-b-2 border-b-gray-600"
+                  ref={Emailref}
+                />
+              </div>
+              <div>
+                <button
+                  className="font-[Merriweather] text-white font-normal p-2 bg-red-700 
+              px-4 ml-2 rounded text-sm
+        border border-red-700 buttonMobile"
+                  onClick={handleStart}
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
           </div>
         </>
       ) : (
@@ -94,13 +125,15 @@ const Register = () => {
       )}
 
       <div className="absolute right-6 top-6">
-        <motion.button
-          className="font-[Merriweather] text-white font-normal p-1 bg-red-700 px-3 rounded text-sm border border-red-700"
-          whileTap={{ scale: 0.3 }}
-          transition={{ ease: "easeInOut" }}
-        >
-          Sign in
-        </motion.button>
+        <Link to="/login">
+          <motion.button
+            className="font-[Merriweather] text-white font-normal p-1 bg-red-700 px-3 rounded text-sm border border-red-700"
+            whileTap={{ scale: 0.3 }}
+            transition={{ ease: "easeInOut" }}
+          >
+            Sign in
+          </motion.button>
+        </Link>
       </div>
     </div>
   );

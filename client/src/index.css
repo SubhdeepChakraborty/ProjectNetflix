@@ -62,3 +62,64 @@
     margin-left: 20px;
   }
 }
+
+@media (max-width: 485px) {
+  .logoMobile {
+    margin-top: 28px;
+  }
+  .smallText {
+    visibility: hidden;
+  }
+  .mainText {
+    font-size: 17px;
+  }
+  .inputText {
+    width: 250px;
+  }
+  .buttonMobile {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .topMobile {
+    margin-top: 2px;
+  }
+  .textDiv {
+    margin-bottom: 0px;
+    position: absolute;
+    top: 210px;
+  }
+  .buttonDiv {
+    position: absolute;
+    top: 164px;
+  }
+}
+
+@media (max-width: 766px) {
+  .padTextDiv {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 411px) {
+  .textDiv {
+    margin-bottom: 0px;
+    position: absolute;
+    top: 170px;
+  }
+  .mainText {
+    font-size: 12px;
+  }
+  .inputText {
+    width: 160px;
+  }
+  .buttonMobile {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+@media (max-width: 356px) {
+  .inputWidth {
+    width: 250px;
+  }
+}
