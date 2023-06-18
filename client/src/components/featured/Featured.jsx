@@ -57,7 +57,7 @@ const Featured = ({ type, setGenre }) => {
           {/* <span className="mt-3 mb-3 font-[Sen] w-[500px] text-lg">
             {content.desc}
           </span> */}
-          <div className="flex items-start justify-start ">
+          {/* <div className="flex items-start justify-start ">
             <button
               className="bg-[#181823] rounded mr-3 
             flex ml-11 items-center justify-start p-3 py-1 smalldevicePad"
@@ -72,7 +72,7 @@ const Featured = ({ type, setGenre }) => {
               <InfoOutlined />{" "}
               <span className=" font-[Merriweather] text-sm mr-2">Info</span>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
