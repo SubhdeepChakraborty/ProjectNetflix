@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 435px) {
+  .logo {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 435px) {
+  .afterLogo {
+    position: absolute;
+    left: 10px;
+    top: 33px;
+  }
+}
+
+@media (max-width: 583px) {
+  .selectMS {
+    left: 10px;
+    top: 64px;
+  }
+}
+
+@media (max-width: 414px) {
+  .mobileIphoneXR {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 425px) {
+  .contentMobile {
+    height: 100px;
+    margin-bottom: 5px;
+    margin-top: 40px;
+  }
+  .widthMobile {
+    width: 50%;
+    left: 8px;
+    bottom: 5px;
+  }
+}
+
+@media (max-width: 756px) {
+  .widthTab {
+    width: 80%;
+  }
+}
+
+@media (max-width: 375px) {
+  .textMS {
+    font-size: 13px;
+  }
+  .selectionS {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 425) {
+  .smalldevicePad {
+    margin-left: 20px;
+  }
+}
