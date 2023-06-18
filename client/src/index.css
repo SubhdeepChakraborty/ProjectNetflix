@@ -63,7 +63,7 @@
   }
 }
 
-@media (max-width: 485px) {
+@media (max-width: 486px) {
   .logoMobile {
     margin-top: 28px;
   }
@@ -121,5 +121,28 @@
 @media (max-width: 356px) {
   .inputWidth {
     width: 250px;
+  }
+}
+
+@media (max-width: 536px) {
+  .userpas {
+    width: 130px;
+  }
+  .user {
+    margin-right: 5px;
+  }
+  .userpasDiv {
+    position: absolute;
+    top: -19px;
+  }
+}
+
+@media (max-width: 410px) {
+  .userpasDiv {
+    position: absolute;
+    top: -100px;
+  }
+  .userpas {
+    width: 90px;
   }
 }

@@ -100,26 +100,28 @@ const Register = () => {
         </>
       ) : (
         <>
-          <form className="absolute right-[27.8rem] top-[22rem]">
-            <input
-              placeholder="username"
-              className="w-[180px] p-2 px-2 mr-1 rounded font-[Sen] font-medium outline-none border-b-2 border-b-gray-600"
-              ref={usernameRef}
-            />
-            <input
-              placeholder="password"
-              className="w-[180px] p-2 px-2 rounded font-[Sen] font-medium outline-none border-b-2 border-b-gray-600"
-              ref={passwordRef}
-            />
-            <motion.button
-              whileTap={{ scale: 0.3 }}
-              transition={{ ease: "easeInOut" }}
-              className="font-[Merriweather] text-white font-normal p-2 bg-red-700 px-4 ml-2 rounded text-sm
+          <form className="absolute flex items-center justify-center top-[22rem] w-[100%]">
+            <div className="userpasDiv">
+              <input
+                placeholder="username"
+                className="w-[180px] userpas user p-2 px-2 mr-1 rounded font-[Sen] font-medium outline-none border-b-2 border-b-gray-600"
+                ref={usernameRef}
+              />
+              <input
+                placeholder="password"
+                className="w-[180px] userpas p-2 px-2 rounded font-[Sen] font-medium outline-none border-b-2 border-b-gray-600"
+                ref={passwordRef}
+              />
+              <motion.button
+                whileTap={{ scale: 0.3 }}
+                transition={{ ease: "easeInOut" }}
+                className="font-[Merriweather]  text-white font-normal p-2 bg-red-700 px-4 ml-2 rounded text-sm
         border border-red-700"
-              onClick={handleFinish}
-            >
-              Start Now
-            </motion.button>
+                onClick={handleFinish}
+              >
+                Start Now
+              </motion.button>
+            </div>
           </form>
         </>
       )}
