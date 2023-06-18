@@ -48,11 +48,16 @@ export const getMovies = async (dispatch) => {
 export const createMovie = async (movie, dispatch) => {
   dispatch(createMovieStart());
   try {
-    const res = await axios.post("http://localhost:8000/api/movies/", movie, {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-      },
-    });
+    const res = await axios.post(
+      "https://server-sf9z.onrender.com/api/movies/",
+      movie,
+      {
+        headers: {
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        },
+      }
+    );
     console.log(res.data);
     dispatch(createMovieSuccess(res.data));
   } catch (err) {
@@ -65,7 +70,7 @@ export const UpdateMovie = async (id, movie, dispatch) => {
   dispatch(updateMovieStart());
   try {
     const res = await axios.put(
-      "http://localhost:8000/api/movies/" + id,
+      "https://server-sf9z.onrender.com/api/movies/" + id,
       movie,
       {
         headers: {
@@ -84,7 +89,7 @@ export const UpdateMovie = async (id, movie, dispatch) => {
 export const deleteMovie = async (id, dispatch) => {
   dispatch(deleteMovieStart());
   try {
-    await axios.delete("http://localhost:8000/api/movies/" + id, {
+    await axios.delete("https://server-sf9z.onrender.com/api/movies/" + id, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },

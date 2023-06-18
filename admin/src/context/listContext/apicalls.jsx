@@ -32,11 +32,16 @@ export const getLists = async (dispatch) => {
 export const createList = async (list, dispatch) => {
   dispatch(createListStart());
   try {
-    const res = await axios.post("http://localhost:8000/api/lists/", list, {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-      },
-    });
+    const res = await axios.post(
+      "https://server-sf9z.onrender.com/api/lists/",
+      list,
+      {
+        headers: {
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        },
+      }
+    );
     dispatch(createListSuccess(res.data));
   } catch (err) {
     dispatch(createListFailure());
@@ -47,7 +52,7 @@ export const createList = async (list, dispatch) => {
 export const deleteList = async (id, dispatch) => {
   dispatch(deleteListStart());
   try {
-    await axios.delete("http://localhost:8000/api/lists/" + id, {
+    await axios.delete("https://server-sf9z.onrender.com/api/lists/" + id, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },

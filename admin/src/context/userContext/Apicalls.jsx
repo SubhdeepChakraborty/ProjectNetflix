@@ -32,7 +32,7 @@ export const getUsers = async (dispatch) => {
 export const deleteUser = async (id, dispatch) => {
   dispatch(deleteUsersStart());
   try {
-    await axios.delete("http://localhost:8000/api/users/" + id, {
+    await axios.delete("https://server-sf9z.onrender.com/api/users/" + id, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },
@@ -47,7 +47,7 @@ export const createUser = async (user, dispatch) => {
   dispatch(createUserStart());
   try {
     const res = await axios.post(
-      "http://localhost:8000/api/auth/register",
+      "https://server-sf9z.onrender.com/api/auth/register",
       user,
       {
         headers: {
@@ -66,11 +66,16 @@ export const createUser = async (user, dispatch) => {
 export const UpdateUser = async (id, user, dispatch) => {
   dispatch(updateUserStart());
   try {
-    const res = await axios.put("http://localhost:8000/api/users/" + id, user, {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-      },
-    });
+    const res = await axios.put(
+      "https://server-sf9z.onrender.com/api/users/" + id,
+      user,
+      {
+        headers: {
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        },
+      }
+    );
     dispatch(updateUserSuccess(res.data));
   } catch (err) {
     dispatch(updateUserFailure());
