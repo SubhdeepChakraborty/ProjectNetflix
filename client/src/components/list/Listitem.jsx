@@ -59,7 +59,7 @@ const Listitem = ({ index, item }) => {
       hover:shadow-[0px_9px_20px_10px_#00000024,0px_3px_8px_0px_#1a202c]
       hover:absolute
       hover:top-[-150px]
-      hover:z-[999] relative"
+      hover:z-[9999999999999999] relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         // style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}
