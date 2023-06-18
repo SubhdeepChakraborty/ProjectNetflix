@@ -10,12 +10,15 @@ const Featured = ({ type, setGenre }) => {
   useEffect(() => {
     const getRandomContent = async () => {
       try {
-        const res = await axios.get(`/api/api/movies/random?type=${type}`, {
-          headers: {
-            token:
-              "Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWE0NTU2MWE1NmYwZTBlNGE0YmZjYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NjU1NjY5MywiZXhwIjoxNjk1MTk2NjkzfQ.MdOZ8UPa68XOse_LEBcnfoF_u3YEvMFz_xrh9GW_qAA",
-          },
-        });
+        const res = await axios.get(
+          `https://server-sf9z.onrender.com/api/movies/random?type=${type}`,
+          {
+            headers: {
+              token:
+                "Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWE0NTU2MWE1NmYwZTBlNGE0YmZjYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NjU1NjY5MywiZXhwIjoxNjk1MTk2NjkzfQ.MdOZ8UPa68XOse_LEBcnfoF_u3YEvMFz_xrh9GW_qAA",
+            },
+          }
+        );
         console.log(res);
         setContent(res.data[0]);
       } catch (err) {

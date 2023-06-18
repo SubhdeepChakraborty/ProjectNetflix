@@ -29,12 +29,15 @@ const Listitem = ({ index, item }) => {
   useEffect(() => {
     const getMovie = async (req, res) => {
       try {
-        const res = await axios.get("/api/api/movies/find/" + item, {
-          headers: {
-            token:
-              "Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWE0NTU2MWE1NmYwZTBlNGE0YmZjYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NjU1NjY5MywiZXhwIjoxNjk1MTk2NjkzfQ.MdOZ8UPa68XOse_LEBcnfoF_u3YEvMFz_xrh9GW_qAA",
-          },
-        });
+        const res = await axios.get(
+          "https://server-sf9z.onrender.com/api/movies/find/" + item,
+          {
+            headers: {
+              token:
+                "Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWE0NTU2MWE1NmYwZTBlNGE0YmZjYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NjU1NjY5MywiZXhwIjoxNjk1MTk2NjkzfQ.MdOZ8UPa68XOse_LEBcnfoF_u3YEvMFz_xrh9GW_qAA",
+            },
+          }
+        );
         setMovie(res.data);
         // console.log(movie);
       } catch (err) {
