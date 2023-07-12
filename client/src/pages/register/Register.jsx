@@ -80,7 +80,7 @@ const Register = () => {
               <div>
                 <input
                   placeholder="Email"
-                  className="w-[350px] inputText p-2 px-2 rounded font-[Sen] text-lg
+                  className="w-[350px] inputText p-1 px-2 rounded font-[Sen] text-lg
                   font-medium outline-none border-b-2 border-b-gray-600"
                   ref={Emailref}
                 />
@@ -88,7 +88,7 @@ const Register = () => {
               <div>
                 <button
                   className="font-[Merriweather] text-white font-normal p-2 bg-red-700 
-              px-4 ml-2 rounded text-sm
+              px-4 ml-2 rounded text-sm h-[100%]
         border border-red-700 buttonMobile"
                   onClick={handleStart}
                 >
