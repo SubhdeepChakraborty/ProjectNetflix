@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../authContext/AuthContext";
 import { useContext } from "react";
 import { logout } from "../../authContext/AuthActions";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -43,27 +44,21 @@ const Navbar = () => {
               <Link to="/movies">
                 <span className=" cursor-pointer">Movies</span>
               </Link>
-              {/* <Link>
-                <span className="mr-10 cursor-pointer">New and Popular</span>
-              </Link>
-              <Link>
-                <span className="mr-10 cursor-pointer">My List</span>
-              </Link> */}
             </>
           </div>
         </div>
-        {/* <div className="text-white ">
-          <Search className="cursor-pointer" />
-          <span className="ml-10 mr-10 cursor-pointer">KID</span>
-          <Notifications className="mr-10 cursor-pointer" />
-        </div> */}
-        <div className="xl:mr-14 lg:mr-14 md:mr-14 mr-3 flex items-center">
-          <img
+
+        <div className="xl:mr-14 lg:mr-14 md:mr-14 mr-3 text-white flex items-center">
+          <LogoutIcon
+            className="cursor-pointer"
+            onClick={() => dispatch(logout())}
+          />
+          {/* <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_VEi8EnGIDT5--ZEYX_KLbkhNdeAwHUN1tQ&usqp=CAU"
             className="h-[50px] w-[50px] xl:block md:block lg:block sm:block hidden rounded-full object-cover"
-          />
-          <div className="text-white cursor-pointer h-[60px] w-[60px] mt-4 ">
-            <ArrowDropDown
+          /> */}
+          {/* <div className="text-white flex items-center justify-center cursor-pointer h-[60px] w-[60px] mt-4 ">
+            {/* <ArrowDropDown
               onClick={() => setShow(!show)}
               sx={{ fontSize: 40 }}
             />
@@ -80,8 +75,8 @@ const Navbar = () => {
               >
                 Logout
               </span>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
       </div>
     </div>
