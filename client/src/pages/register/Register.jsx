@@ -15,14 +15,15 @@ const Register = () => {
   const Emailref = useRef();
   const passwordRef = useRef();
   const usernameRef = useRef();
+
   const handleStart = () => {
     setEmail(Emailref.current.value);
   };
 
   const handleFinish = async (e) => {
     e.preventDefault();
-    setPassword(passwordRef.current.value);
-    setUsername(usernameRef.current.value);
+    setPassword(passwordRef?.current?.value);
+    setUsername(usernameRef?.current?.value);
     try {
       await axios.post("https://server-sf9z.onrender.com/api/auth/register", {
         email,
@@ -56,25 +57,6 @@ const Register = () => {
       </div>
       {!email ? (
         <>
-          {/* <div
-            className="absolute right-[27.8rem] w-[70%] top-[22rem] 
-          md:left-[13rem] lg:left-[13rem] md:top-[24rem]"
-          >
-            <input
-              placeholder="Email"
-              className="w-[350px] p-1 px-2 rounded font-[Sen] font-medium 
-              outline-none border-b-2 border-b-gray-600"
-              ref={Emailref}
-            />
-            <button
-              className="font-[Merriweather] text-white font-normal p-2 bg-red-700 
-              px-4 ml-2 rounded text-sm h-[100%]
-        border border-red-700"
-              onClick={handleStart}
-            >
-              Get Started
-            </button>
-          </div> */}
           <div className="absolute mt-[6rem] buttonDiv md:absolute md:top-[16rem]">
             <div className="flex ">
               <div>
@@ -100,27 +82,27 @@ const Register = () => {
         </>
       ) : (
         <>
-          <form className="absolute flex items-center justify-center top-[22rem] w-[100%]">
+          <form className="absolute flex flex-col-reverse items-center justify-center top-[22rem] w-[100%]">
             <div className="userpasDiv">
               <input
                 placeholder="username"
-                className="w-[180px] userpas user p-2 px-2 mr-1 rounded font-[Sen] font-medium outline-none border-b-2 border-b-gray-600"
+                className="w-[180px] userpas user p-1 px-2 mr-1 rounded font-[Sen] 
+                font-medium outline-none border-b-2 border-b-gray-600"
                 ref={usernameRef}
               />
               <input
                 placeholder="password"
-                className="w-[180px] userpas p-2 px-2 rounded font-[Sen] font-medium outline-none border-b-2 border-b-gray-600"
+                className="w-[180px] userpas p-1 px-2 rounded font-[Sen] font-medium outline-none border-b-2 border-b-gray-600"
                 ref={passwordRef}
               />
-              <motion.button
-                whileTap={{ scale: 0.3 }}
+              <button
                 transition={{ ease: "easeInOut" }}
                 className="font-[Merriweather]  text-white font-normal p-2 bg-red-700 px-4 ml-2 rounded text-sm
         border border-red-700"
                 onClick={handleFinish}
               >
                 Start Now
-              </motion.button>
+              </button>
             </div>
           </form>
         </>
