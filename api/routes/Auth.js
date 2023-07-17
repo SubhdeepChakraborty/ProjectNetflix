@@ -13,6 +13,7 @@ router.post("/register", async (req, res) => {
       process.env.SECRET_KEY
     ).toString(),
     profilePic: req.body.profilePic,
+    status: req.body.status,
   });
   try {
     const user = await newUser.save();
