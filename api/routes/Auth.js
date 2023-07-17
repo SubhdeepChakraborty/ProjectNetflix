@@ -14,6 +14,7 @@ router.post("/register", async (req, res) => {
     ).toString(),
     profilePic: req.body.profilePic,
     status: req.body.status,
+    amount: req.body.amount,
   });
   try {
     const user = await newUser.save();
