@@ -8,6 +8,8 @@ const UserSchema = new mongoose.Schema(
     profilePic: { type: String, defaut: "" },
     isAdmin: { type: Boolean, default: false },
     status: { type: Boolean, default: false },
+     status: { type: Boolean, default: false },
+    amount: {type: String, default: "200"},
   },
   { timestamps: true }
 );
