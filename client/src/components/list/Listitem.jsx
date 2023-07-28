@@ -19,13 +19,12 @@ import { useState } from "react";
 import { useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Listitem = ({ index, item }) => {
-  // const { open, setOpen } = useglobalHook();
-  // console.log(open);
-
   const [movie, setMovie] = useState({});
-  // console.log(item);
+
   useEffect(() => {
     const getMovie = async (req, res) => {
       try {
@@ -39,7 +38,6 @@ const Listitem = ({ index, item }) => {
           }
         );
         setMovie(res.data);
-        // console.log(movie);
       } catch (err) {
         console.log(err);
       }
@@ -62,11 +60,10 @@ const Listitem = ({ index, item }) => {
       hover:z-[9999999999999999] relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        // style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}
         whileHover={{ scale: 1.1 }}
       >
         <div className="w-full bg-black flex items-center justify-center hover:h-[0px] h-[120px] object-cover pointer-events-none">
-          <img src={movie.img} />
+          <LazyLoadImage effect="blur" threshold={100} src={movie.img} />
         </div>
         {isHovered && (
           <>
@@ -94,25 +91,10 @@ const Listitem = ({ index, item }) => {
                     <PlayArrow />
                   </motion.div>
                 </Link>
-                {/* <motion.div
-                  whileTap={{ scale: 0.4 }}
-                  className=" cursor-pointer left-10"
+                <div
+                  className="text-gray-600 font-semibold  
+                cursor-default right-1 pointer-events-none"
                 >
-                  <Add />
-                </motion.div>
-                <motion.div
-                  whileTap={{ scale: 0.4 }}
-                  className=" cursor-pointer left-20"
-                >
-                  <ThumbUpAltOutlined />
-                </motion.div>
-                <motion.div
-                  whileTap={{ scale: 0.4 }}
-                  className=" cursor-pointer left-[120px]"
-                >
-                  <ThumbDownAltOutlined />
-                </motion.div> */}
-                <div className="text-gray-600 font-semibold  cursor-default right-1 pointer-events-none">
                   {movie.genre}
                 </div>
               </div>
