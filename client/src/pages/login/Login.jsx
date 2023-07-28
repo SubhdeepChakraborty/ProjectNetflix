@@ -4,6 +4,8 @@ import { AuthContext } from "../../authContext/AuthContext";
 import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -64,7 +66,10 @@ const Login = () => {
         <form className="p-5">
           <div className="flex flex-col items-center justify-center">
             <div>
-              <img
+              <LazyLoadImage
+                effect="blur"
+                threshold={100}
+                // visibleByDefault={true}
                 className="h-[100px] w-[270px] mb-3 "
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
                 alt=""

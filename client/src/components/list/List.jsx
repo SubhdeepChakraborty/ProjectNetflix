@@ -28,7 +28,7 @@ const List = ({ list }) => {
 
   return (
     <div className="w-[100%] mt-3">
-      <span className="font-[Sen] text-xl text-white font-medium ml-10">
+      <span className="font-[Sen] text-xl text-white font-medium ml-10 z-[10]">
         {list.title} <KeyboardDoubleArrowRightSharp />
       </span>
       <div className="flex flex-col max-w-max relative">

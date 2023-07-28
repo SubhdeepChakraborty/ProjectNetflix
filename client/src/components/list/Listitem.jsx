@@ -19,6 +19,8 @@ import { useState } from "react";
 import { useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Listitem = ({ index, item }) => {
   // const { open, setOpen } = useglobalHook();
@@ -66,7 +68,7 @@ const Listitem = ({ index, item }) => {
         whileHover={{ scale: 1.1 }}
       >
         <div className="w-full bg-black flex items-center justify-center hover:h-[0px] h-[120px] object-cover pointer-events-none">
-          <img src={movie.img} />
+          <LazyLoadImage effect="blur" threshold={100} src={movie.img} />
         </div>
         {isHovered && (
           <>
@@ -112,7 +114,10 @@ const Listitem = ({ index, item }) => {
                 >
                   <ThumbDownAltOutlined />
                 </motion.div> */}
-                <div className="text-gray-600 font-semibold  cursor-default right-1 pointer-events-none">
+                <div
+                  className="text-gray-600 font-semibold  
+                cursor-default right-1 pointer-events-none"
+                >
                   {movie.genre}
                 </div>
               </div>
